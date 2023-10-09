@@ -1,0 +1,33 @@
+#root {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.app{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+ .d-flex{
+  display: flex;
+
+ }
+
+.al-c{
+  align-items: center;
+}
+.jc-sb{
+  justify-content: space-between;
+}
+
+ .ls-n{
+  list-style: none;
+ }
+
+ .m-0{margin: 0;}
+ .p-0{padding: 0;}
+

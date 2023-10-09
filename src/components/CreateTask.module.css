@@ -1,0 +1,64 @@
+.container{
+    background-color: #fffffe;
+    padding: 1rem 0;  
+    color: #0f0e17; 
+    justify-content: center;
+    display: flex;
+}
+.content{ 
+    position: relative;
+    transform: translateY(-5rem); 
+    width: 416px;
+    height: 153px;  
+}
+
+
+.content textarea {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    background: #FFF4CD;
+    border: 1px solid rgba(126, 50, 25, 0.16);
+    box-shadow: 0px 10px 14px rgba(126, 50, 25, 0.15);
+    color: #0f0e17;
+    padding: 1rem;
+    border-radius: 3px;
+    resize: none;   
+}
+
+.content > div{ 
+    align-items: center;
+    display: flex;
+}
+.inputBox{}
+.buttonBox{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+button[type="submit"]{
+   
+
+    background-color: transparent;
+    color: rgb(255, 255, 254);
+    opacity: 1; 
+
+    border-radius: 3px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-block;
+    border: 0; 
+
+    margin: 0.5rem;
+ }
+button[type="submit"]:disabled{
+    cursor: no-drop;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

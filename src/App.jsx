@@ -1,18 +1,16 @@
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+
 import './App.css'
+import { CreateTask } from './components/CreateTask'
+import { EmptyState } from './components/EmptyState'
+import { ListTasks } from './components/ListTasks'
+import { Header } from './components/Header'
+import { InfoTask } from './components/InfoTask'
 
 function App() {
   const [tasks, setTasks] = useState([])
-
   const [newTask, setNewtask] = useState('')
-
-  // const [squares, setSquares] = useState(Array(9).fill(null));
-  // console.log(squares)
-
-  // console.log('tasks', tasks)
-  // console.log('---')
-  // console.log('newTask', newTask)
 
   function handleCreateNewTask() {
     event.preventDefault()
@@ -36,8 +34,6 @@ function App() {
     event.target.setCustomValidity('Este campo é obrigatório')
   }
 
-  const isNewTaskEmpty = newTask.length === 0
-
   function handleIsComplete(id) {
     const taskSelectedIsComplete = tasks.map((task) =>
       task.id === id ? { ...task, isComplete: !task.isComplete } : task,
@@ -45,76 +41,41 @@ function App() {
     setTasks(taskSelectedIsComplete)
   }
 
-  // contagem de itens finalizados
-  const taskFinished = tasks.filter((finished) => finished.isComplete === true)
-
   function handleRemoveTask(id) {
     const filteredTaks = tasks.filter((task) => task.id !== id)
     setTasks(filteredTaks)
   }
 
+  const isNewTaskEmpty = newTask.length === 0
+  const isTasksEmpty = tasks.length === 0
+  const taskFinished = tasks.filter((finished) => finished.isComplete === true)
+
   return (
     <div className="app">
-      <header>
-        <form onSubmit={handleCreateNewTask} action="" className="d-flex">
-          <div>
-            <label htmlFor="todo1"></label>
-            <input
-              id="todo1"
-              type="text"
-              value={newTask}
-              placeholder="insert new task"
-              onChange={handleNewTaskChange}
-              onInvalid={handleNewTaskInvalid}
-            />
-          </div>
+      <Header />
 
-          <div>
-            <button type="submit" disabled={isNewTaskEmpty}>
-              {' '}
-              Criar
-            </button>
-          </div>
-        </form>
-      </header>
+      <CreateTask
+        handleCreateNewTask={handleCreateNewTask}
+        newTask={newTask}
+        handleNewTaskChange={handleNewTaskChange}
+        handleNewTaskInvalid={handleNewTaskInvalid}
+        isNewTaskEmpty={isNewTaskEmpty}
+      />
 
-      <section>
-        <header className="d-flex jc-sb al-c">
-          <div className="d-flex">
-            <h2> Tarefas criadas {tasks.length}</h2>
-          </div>
+      <EmptyState isTasksEmpty={isTasksEmpty} />
 
-          <div className="d-flex">
-            <strong>concluidas</strong>
-            <span>
-              {taskFinished.length} de {tasks.length}
-            </span>
-          </div>
-        </header>
+      <InfoTask
+        tasks={tasks}
+        taskFinished={taskFinished}
+        isTasksEmpty={isTasksEmpty}
+      />
 
-        <ul className="p-0 m-0">
-          {tasks.map((task) => {
-            return (
-              <li key={task.id} className="ls-n">
-                <div className="d-flex  jc-sb al-c">
-                  <button onClick={() => handleIsComplete(task.id)}>
-                    {' '}
-                    {task.isComplete ? 'feito' : 'a fazer'}
-                  </button>
-                  <div>
-                    <p>
-                      {task.title} + {task.id}
-                    </p>
-                  </div>
-                  <button onClick={() => handleRemoveTask(task.id)}>
-                    remover
-                  </button>
-                </div>
-              </li>
-            )
-          })}
-        </ul>
-      </section>
+      <ListTasks
+        tasks={tasks}
+        handleRemoveTask={handleRemoveTask}
+        handleIsComplete={handleIsComplete}
+        isTasksEmpty={isTasksEmpty}
+      />
     </div>
   )
 }

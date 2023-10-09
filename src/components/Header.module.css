@@ -1,0 +1,24 @@
+.container{
+    background-color: #0f0e17;
+     min-height: 70vh;
+     height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.content{}
+
+.brand{}
+
+.headline{
+    color: #fffffe;
+    margin: 0 0 1rem 0;
+    font-weight: 200;
+    letter-spacing: 0.2rem;
+}
+.paragraph{
+    color: #a7a9be;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+
+}

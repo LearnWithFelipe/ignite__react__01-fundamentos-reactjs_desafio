@@ -1,3 +1,12 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -29,6 +38,9 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+   
+background: linear-gradient(179.28deg, #EE9EA2 0%, #BF69D9 100%);
+
 }
 
 h1 {
@@ -49,3 +61,6 @@ h1 {
     background-color: #f9f9f9;
   }
 }
+
+
+ 

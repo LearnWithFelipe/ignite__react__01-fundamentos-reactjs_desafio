@@ -22,16 +22,19 @@ export function ListTasks({
         )}
 
         <div className={styles.content}>
-          {tasks.map((task) => {
-            return (
-              <Task
-                key={task.id}
-                task={task}
-                handleIsComplete={handleIsComplete}
-                handleRemoveTask={handleRemoveTask}
-              />
-            )
-          })}
+          {tasks
+            .slice(0)
+            .reverse()
+            .map((task) => {
+              return (
+                <Task
+                  key={task.id}
+                  task={task}
+                  handleIsComplete={handleIsComplete}
+                  handleRemoveTask={handleRemoveTask}
+                />
+              )
+            })}
         </div>
       </div>
     )

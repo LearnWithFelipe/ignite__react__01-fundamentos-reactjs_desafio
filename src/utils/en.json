@@ -1,0 +1,19 @@
+{
+  "translation": {
+    "TITLE": "My Notes",
+    "SLOGAN": "Don't Miss a Thing",
+    "THIS_FIELD_IS_REQUIRE": "This field is require",
+    "RETURN_TASK_TO_TODO": "Return task to to do",
+    "SET_IT_TO_DONE": "Set it to done",
+    "WRITE_A_NEW_TASK": "Write a new task",
+    "REMOVE_TASK": "Remove task",
+    "EMPTY_STATE_HEADLINE": "You don't have any tasks registered yet",
+    "EMPTY_STATE_SUBLINE": "Create tasks and organize your to-dos",
+    "CREATE_NEW_TASK": "Create new task",
+    "TASK_TEXTAREA_EMPTY": "Write something to get started",
+    "task_created_one": "A task created",
+    "task_created_other": "{{count}} tasks created",
+    "task_completed_one": " 1 completed of ",
+    "task_completed_other": " {{count}} completed of "
+  }
+}

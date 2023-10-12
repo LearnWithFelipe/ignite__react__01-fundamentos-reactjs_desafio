@@ -1,7 +1,12 @@
 import React from 'react'
 import styles from './Task.module.css'
 import { Trash, RadioButton } from '@phosphor-icons/react'
+
+import '../utils/i18n.jsx'
+import { useTranslation } from 'react-i18next'
+
 export default function Task({ task, handleIsComplete, handleRemoveTask }) {
+  const { t, i18n } = useTranslation()
   return (
     <div
       role="listitem"
@@ -14,9 +19,7 @@ export default function Task({ task, handleIsComplete, handleRemoveTask }) {
           <button
             className={styles.radioButton}
             onClick={() => handleIsComplete(task.id)}
-            aria-label={` ${
-              task.isComplete ? 'Turn task to do' : 'Make task done'
-            }  ${task.title}`}
+            aria-label={` {task.isComplete ? t('RETURN_TASK_TO_TODO') : t('SET_IT_TO_DONE')}  ${task.title}`}
           >
             {task.isComplete ? (
               <RadioButton
@@ -33,16 +36,16 @@ export default function Task({ task, handleIsComplete, handleRemoveTask }) {
               />
             )}
             <span className={styles.radioButtonName}>
-              {task.isComplete ? 'Turn task to do' : 'Make task done'}
+              {task.isComplete ? t('RETURN_TASK_TO_TODO') : t('SET_IT_TO_DONE')}
             </span>
           </button>
 
           <button
             className={styles.deleteButton}
-            title={`Remover task: ` + task.title}
+            title={t('REMOVE_TASK') + ': ' + task.title}
             onClick={() => handleRemoveTask(task.id)}
           >
-            <span className={styles.deleteButtonName}>Remove task</span>
+            <span className={styles.deleteButtonName}>{t('REMOVE_TASK')}</span>
             <Trash
               className={styles.deleteButtonIcon}
               size={24}

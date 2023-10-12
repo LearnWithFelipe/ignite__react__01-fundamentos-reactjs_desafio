@@ -1,0 +1,19 @@
+{
+  "translation": {
+    "TITLE": "Minhas notas",
+    "SLOGAN": "Não perca nada",
+    "THIS_FIELD_IS_REQUIRE": "Este campo é obrigatório",
+    "RETURN_TASK_TO_TODO": "Voltar tarefa em a fazer",
+    "SET_IT_TO_DONE": "Defina como feito",
+    "WRITE_A_NEW_TASK": "Escreva uma nova tarefa",
+    "REMOVE_TASK": "Remover tarefa",
+    "EMPTY_STATE_HEADLINE": "Você ainda não tem nenhuma tarefa cadastrada",
+    "EMPTY_STATE_SUBLINE": "Crie e organize suas tarefas",
+    "CREATE_NEW_TASK": "Criar nova tarefa",
+    "TASK_TEXTAREA_EMPTY": "Escreva algo para começar",
+    "task_created_one": "1 tarefa criada",
+    "task_created_other": "{{count}} tarefas criadas",
+    "task_completed_one": " 1 concluida de ",
+    "task_completed_other": " {{count}} concluidas de "
+  }
+}

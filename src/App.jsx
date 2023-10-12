@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import './utils/i18n.jsx'
+import { useTranslation } from 'react-i18next'
 
 import './App.css'
 import { CreateTask } from './components/CreateTask'
@@ -9,6 +11,7 @@ import { Header } from './components/Header'
 import { InfoTask } from './components/InfoTask'
 
 function App() {
+  const { t, i18n } = useTranslation()
   const [tasks, setTasks] = useState([])
   const [newTask, setNewtask] = useState('')
 
@@ -31,7 +34,7 @@ function App() {
   }
 
   function handleNewTaskInvalid() {
-    event.target.setCustomValidity('Este campo é obrigatório')
+    event.target.setCustomValidity(`{t('THIS_FIELD_IS_REQUIRE')}`)
   }
 
   function handleIsComplete(id) {
@@ -53,7 +56,6 @@ function App() {
   return (
     <div className="app">
       <Header />
-
       <CreateTask
         handleCreateNewTask={handleCreateNewTask}
         newTask={newTask}

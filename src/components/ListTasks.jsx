@@ -21,21 +21,15 @@ export function ListTasks({
     !isTasksEmpty && (
       <div className={styles.container}>
         {taskFinished.length === tasks.length && (
-          <>
-            {() => {
-              triggerHaveNoTask()
-            }}
-            <div className={styles.emptyContent}>
-              <Champagne size={80} color="#0f0e17" weight="thin" />
-
-              <h3 className={styles.emptyHeadline}>
-                {t('NO_USER_TASK_HEADLINE')}
-              </h3>
-              <p className={styles.emptySubHeadline}>
-                {t('NO_USER_TASK_SUBHEADLINE')}
-              </p>
-            </div>
-          </>
+          <div className={styles.emptyContent}>
+            <Champagne size={80} color="#0f0e17" weight="thin" />
+            <h3 className={styles.emptyHeadline}>
+              {t('NO_USER_TASK_HEADLINE')}
+            </h3>
+            <p className={styles.emptySubHeadline}>
+              {t('NO_USER_TASK_SUBHEADLINE')}
+            </p>
+          </div>
         )}
 
         <div className={styles.content}>

@@ -2,9 +2,11 @@
     padding: 1rem;
     justify-content: center;
     display: flex;
-    position: absolute;
+    background-color: #fff;
+    color: #0f0e17; 
     top: 0;
     width: 100%;
+     
 }
 
 .content {
@@ -25,7 +27,12 @@
 .headline{
    
     margin: 0;
-     font-size: 0.694rem;
+     font-size: 0.6rem;
      font-weight: 600;
      padding: 0;
+
+      /* Small devices (landscape phones, 576px and up) */
+      @media (min-width: 576px) { 
+        font-size: 0.694rem;
+       }
 }

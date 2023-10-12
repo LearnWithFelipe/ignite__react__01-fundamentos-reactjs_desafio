@@ -1,11 +1,17 @@
 .container{
-    background-color: #0f0e17;
-     min-height: 45vh;
-     height: 45vh;
+    background-color: #0f0e17; 
     display: flex;
     align-items: center;
     justify-content: center; 
+   
+    @media (min-width: 768px) { 
+        min-height: 45vh;
+        height: 45vh;
+     }
 }
+
+
+
 .content{}
 
 .brand{}

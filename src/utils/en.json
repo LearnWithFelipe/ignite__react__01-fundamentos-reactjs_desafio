@@ -11,9 +11,11 @@
     "EMPTY_STATE_SUBLINE": "Create tasks and organize your to-dos",
     "CREATE_NEW_TASK": "Create new task",
     "TASK_TEXTAREA_EMPTY": "Write something to get started",
-    "task_created_one": "A task created",
+    "task_created_one": "1 task created",
     "task_created_other": "{{count}} tasks created",
     "task_completed_one": " 1 completed of ",
-    "task_completed_other": " {{count}} completed of "
+    "task_completed_other": " {{count}} completed of ",
+    "change_language_pt": "Change the portugues language ",
+    "change_language_en": "Change the english language"
   }
 }

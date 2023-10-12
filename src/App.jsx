@@ -9,6 +9,7 @@ import { EmptyState } from './components/EmptyState'
 import { ListTasks } from './components/ListTasks'
 import { Header } from './components/Header'
 import { InfoTask } from './components/InfoTask'
+import ChangeLanguage from './components/ChangeLanguage.jsx'
 
 function App() {
   const { t, i18n } = useTranslation()
@@ -55,6 +56,7 @@ function App() {
 
   return (
     <div className="app">
+      <ChangeLanguage />
       <Header />
       <CreateTask
         handleCreateNewTask={handleCreateNewTask}
@@ -77,6 +79,7 @@ function App() {
         handleRemoveTask={handleRemoveTask}
         handleIsComplete={handleIsComplete}
         isTasksEmpty={isTasksEmpty}
+        taskFinished={taskFinished}
       />
     </div>
   )

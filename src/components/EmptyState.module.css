@@ -1,7 +1,7 @@
 .container{
     background-color: #fffffe;
     padding: 0rem 0 6rem 0;
-    min-height: calc( 55vh - 11.563rem);
+    min-height: 20rem;
     height: calc( 55vh - 11.563rem);
     display: flex;
     align-items: center;
@@ -17,6 +17,8 @@
     font-size: 1.728rem;
     color: #0f0e17;
 }
+
+ 
 
 .subHeadline{
 color: #2e2f3e;

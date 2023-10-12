@@ -5,7 +5,7 @@ import pt from './pt.json'
 
 i18n.use(initReactI18next).init({
   compatibilityJSON: 'v4',
-  lng: 'pt', // if you're using a language detector, do not define the lng option
+  lng: 'en', // if you're using a language detector, do not define the lng option
   fallbackLng: 'en',
   resources: {
     en,

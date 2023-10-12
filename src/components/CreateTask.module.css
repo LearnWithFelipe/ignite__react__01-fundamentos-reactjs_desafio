@@ -7,8 +7,14 @@
 }
 .content{ 
     position: relative;
-     width: 26rem ; /* 416px */
+    width: 90% ; /* 416px */
     height: 9.563rem;   /* 153px */
+
+     /* Small devices (landscape phones, 576px and up) */
+     @media (min-width: 576px) { 
+        width: 26rem ; /* 416px */
+        height: 9.563rem;   /* 153px */
+       }  
 }
 
 

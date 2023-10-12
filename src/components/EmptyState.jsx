@@ -11,7 +11,12 @@ export function EmptyState({ isTasksEmpty }) {
   return (
     isTasksEmpty && (
       <section className={styles.container}>
-        <ArrowBendLeftUp size={80} color="#0f0e17" weight="thin" />
+        <ArrowBendLeftUp
+          className={styles.icon}
+          size={80}
+          color="#0f0e17"
+          weight="thin"
+        />
 
         <div className={styles.content} aria-live="polite" role="alert">
           <h3 className={styles.headline}>{t('EMPTY_STATE_HEADLINE')}</h3>

@@ -1,0 +1,32 @@
+.container{  
+    display: flex;
+    justify-content: center;
+    background-color: #0f0e17; 
+    z-index: 2000;
+    position: relative;
+}
+
+
+.content{}
+.nav{ }
+.list{ list-style: none;    padding: 0;     display: flex;}
+.item{}
+.button{
+    border: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+    background-color: transparent;
+    margin: 2px 0;
+    padding: 4px;
+    display: flex;
+    background: transparent;
+    transition: all 0.2s linear;
+}
+.buttonSelected{border: 2px solid rgba(255, 255, 255, 0.4);}
+.flag{
+     width: 2rem;
+ 
+}
+
+
+ 

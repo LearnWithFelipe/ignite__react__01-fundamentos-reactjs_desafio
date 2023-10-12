@@ -14,6 +14,8 @@
     "task_created_one": "1 tarefa criada",
     "task_created_other": "{{count}} tarefas criadas",
     "task_completed_one": " 1 concluida de ",
-    "task_completed_other": " {{count}} concluidas de "
+    "task_completed_other": " {{count}} concluidas de ",
+    "change_language_pt": "Traduza para Lingua Porguêsa ",
+    "change_language_en": "Traduza para o Inglês"
   }
 }

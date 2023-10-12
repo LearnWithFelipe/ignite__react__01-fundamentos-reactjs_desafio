@@ -18,7 +18,7 @@
     flex-direction: row;
     justify-content: space-between;
     opacity: 0.5;
-    transition: all 0.2s linear;
+    transition: all 0.2s linear; 
 }
 
 .taskHeader:focus-within,
@@ -41,8 +41,15 @@
 .radioButtonName, 
 .deleteButtonName{
     color: #0f0e17;
-    margin: 0 0.2rem;
-    
+    margin: 0 0.2rem; 
+}
+
+.deleteButtonName{
+     display: none;
+      /* Small devices (landscape phones, 576px and up) */
+      @media (min-width: 576px) { 
+        display: flex;
+       }
 }
 
 .deleteButton {

@@ -1,0 +1,85 @@
+.task{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #FFF4CD;
+    border: 1px solid rgba(126, 50, 25, 0.16);
+    box-shadow: 0px 10px 14px rgba(126, 50, 25, 0.15);
+    color: #0f0e17;
+    padding: 1rem;
+    border-radius: 3px;
+    text-align: left;
+    transition: all 0.2s linear;
+}
+
+.taskHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    opacity: 0.5;
+    transition: all 0.2s linear;
+}
+
+.taskHeader:focus-within,
+.taskHeader:hover{
+    opacity: 1;
+}
+
+.taskContent{ padding: 0.2rem 1rem;}
+
+.radioButton{
+    border: none;
+    background: rgba(126, 50, 25, 0); 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    padding: 0.2rem 0.5rem;
+    transition: background 0.2 linear;
+}
+.radioButtonName, 
+.deleteButtonName{
+    color: #0f0e17;
+    margin: 0 0.2rem;
+    
+}
+
+.deleteButton {
+    border: none;
+    background: rgba(126, 50, 25, 0); 
+
+    cursor: pointer; 
+    color: #0f0e17; 
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 3px;
+    padding: 0.2rem 0.5rem;
+    transition: all 0.2 linear;
+}
+ 
+
+.radioButtonIcon,
+ .deleteButtonIcon{
+    border-radius: 50%;
+    
+ }
+  
+ .radioButton:focus ,
+ .deleteButton:focus, 
+.radioButton:hover ,
+.deleteButton:hover  {
+   background: rgba(126, 50, 25, 0.15); 
+}
+
+.taskDone{
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #111; 
+    box-shadow: none;
+    border: 1px solid transparent;
+  }
+  .taskDone p {text-decoration: line-through;}
+/* .taskTodo{} */

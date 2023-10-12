@@ -21,6 +21,7 @@ export function CreateTask({
           onChange={handleNewTaskChange}
           onInvalid={handleNewTaskInvalid}
           aria-label="Insert new task"
+          ref={(textarea) => textarea && textarea.focus()}
         />
 
         <div className={styles.buttonBox}>

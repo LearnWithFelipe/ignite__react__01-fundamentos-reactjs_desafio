@@ -1,5 +1,5 @@
 .container{
-    background-color: #fffffe;
+    background: linear-gradient( to bottom, #0f0e18 0%, #0f0e18 50%, #FFFFFf 50%, #ffffff 100% );
     padding: 1rem 0;  
     color: #0f0e17; 
     justify-content: center;
@@ -7,9 +7,8 @@
 }
 .content{ 
     position: relative;
-    transform: translateY(-5rem); 
-    width: 416px;
-    height: 153px;  
+     width: 26rem ; /* 416px */
+    height: 9.563rem;   /* 153px */
 }
 
 

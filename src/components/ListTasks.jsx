@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './ListTasks.module.css'
+import Task from './Task'
 export function ListTasks({
   tasks,
   handleRemoveTask,
@@ -8,26 +9,19 @@ export function ListTasks({
 }) {
   return (
     !isTasksEmpty && (
-      <div role="list" className={styles.container}>
-        {tasks.map((task) => {
-          return (
-            <div role="listitem" key={task.id} className="ls-n">
-              <div className="d-flex  jc-sb al-c">
-                <button onClick={() => handleIsComplete(task.id)}>
-                  {task.isComplete ? 'feito' : 'a fazer'}
-                </button>
-                <div>
-                  <p>
-                    {task.title} + {task.id}
-                  </p>
-                </div>
-                <button onClick={() => handleRemoveTask(task.id)}>
-                  remover
-                </button>
-              </div>
-            </div>
-          )
-        })}
+      <div className={styles.container}>
+        <div className={styles.content}>
+          {tasks.map((task) => {
+            return (
+              <Task
+                key={task.id}
+                task={task}
+                handleIsComplete={handleIsComplete}
+                handleRemoveTask={handleRemoveTask}
+              />
+            )
+          })}
+        </div>
       </div>
     )
   )

@@ -1,16 +1,25 @@
 .container{
-    background-color: #fffffe;
-    padding: 6rem 0;
-    border: 1px solid red;
-    min-height: 40vh;
+    background-color: #ffffff;
+    padding: 1rem 4rem;
+    /* border: 1px solid red; */
+    min-height: 36vh;
     justify-content: center;
     display: flex;
     text-align: center;
     flex-direction: column;
     align-items: center;
-    color: #0f0e17;
+    color: #0f0e17; 
+
 }
-.content{ line-height: 1}
+.content{ 
+    
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: auto auto auto;
+}
 
 .headline{
     font-size: 1.728rem;

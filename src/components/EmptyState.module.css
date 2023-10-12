@@ -1,6 +1,13 @@
 .container{
     background-color: #fffffe;
     padding: 0rem 0 6rem 0;
+    min-height: calc( 55vh - 11.563rem);
+    height: calc( 55vh - 11.563rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
 }
 .content{ line-height: 1;
     align-items: center;

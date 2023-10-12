@@ -11,11 +11,13 @@ export function CreateTask({
   handleNewTaskChange,
   handleNewTaskInvalid,
   isNewTaskEmpty,
+  handleClickScroll,
+  listRef,
 }) {
   const { t, i18n } = useTranslation()
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} ref={listRef}>
       <form onSubmit={handleCreateNewTask} className={styles.content}>
         <label htmlFor="todo">{t('WRITE_A_NEW_TASK')}</label>
         <textarea
@@ -33,6 +35,7 @@ export function CreateTask({
           <button
             type="submit"
             disabled={isNewTaskEmpty}
+            onClick={handleClickScroll}
             aria-label={t('CREATE_NEW_TASK')}
             title={
               isNewTaskEmpty ? t('TASK_TEXTAREA_EMPTY') : t('CREATE_NEW_TASK')

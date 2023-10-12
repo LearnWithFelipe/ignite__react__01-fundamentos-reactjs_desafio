@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import './utils/i18n.jsx'
 import { useTranslation } from 'react-i18next'
@@ -15,6 +15,7 @@ function App() {
   const { t, i18n } = useTranslation()
   const [tasks, setTasks] = useState([])
   const [newTask, setNewtask] = useState('')
+  const listRef = useRef(null)
 
   function handleCreateNewTask() {
     event.preventDefault()
@@ -50,6 +51,12 @@ function App() {
     setTasks(filteredTaks)
   }
 
+  const handleClickScroll = () => {
+    listRef.current.scrollIntoView()
+
+    console.log('clicado')
+  }
+
   const isNewTaskEmpty = newTask.length === 0
   const isTasksEmpty = tasks.length === 0
   const taskFinished = tasks.filter((finished) => finished.isComplete === true)
@@ -59,6 +66,8 @@ function App() {
       <ChangeLanguage />
       <Header />
       <CreateTask
+        listRef={listRef}
+        handleClickScroll={handleClickScroll}
         handleCreateNewTask={handleCreateNewTask}
         newTask={newTask}
         handleNewTaskChange={handleNewTaskChange}

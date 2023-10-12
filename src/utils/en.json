@@ -16,6 +16,8 @@
     "task_completed_one": " 1 completed of ",
     "task_completed_other": " {{count}} completed of ",
     "change_language_pt": "Change the portugues language ",
-    "change_language_en": "Change the english language"
+    "change_language_en": "Change the english language",
+    "NO_USER_TASK_HEADLINE ": "You have no task to do!",
+    "NO_USER_TASK_SUBHEADLINE ": "Enjoy your day"
   }
 }

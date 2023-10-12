@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import './utils/i18n.jsx'
 import { useTranslation } from 'react-i18next'
+import useSound from 'use-sound'
 
 import './App.css'
 import { CreateTask } from './components/CreateTask'
@@ -11,11 +12,33 @@ import { Header } from './components/Header'
 import { InfoTask } from './components/InfoTask'
 import ChangeLanguage from './components/ChangeLanguage.jsx'
 
+import popUrl from './assets/sounds/pop.mp3'
+import popDownUrl from './assets/sounds/pop-down.mp3'
+import popOffUrl from './assets/sounds/pop-off.mp3'
+import fanfareUrl from './assets/sounds/fanfare.mp3'
+
 function App() {
   const { t, i18n } = useTranslation()
   const [tasks, setTasks] = useState([])
   const [newTask, setNewtask] = useState('')
   const listRef = useRef(null)
+  const [triggered, setTriggered] = useState(false)
+
+  const [haveNoTask, { stop }] = useSound(fanfareUrl, {
+    volume: 0.3,
+    interrupt: true,
+  })
+
+  const [createTaskSound] = useSound(popUrl, {
+    volume: 0.5,
+  })
+  const [deleteTaskSound] = useSound(popDownUrl, {
+    volume: 0.5,
+  })
+
+  const [completeTaskSound] = useSound(popOffUrl, {
+    volume: 0.5,
+  })
 
   function handleCreateNewTask() {
     event.preventDefault()
@@ -25,6 +48,7 @@ function App() {
       title: newTask,
       isComplete: false,
     }
+    createTaskSound()
 
     setTasks([...tasks, newTaskContent])
     setNewtask('')
@@ -44,17 +68,21 @@ function App() {
       task.id === id ? { ...task, isComplete: !task.isComplete } : task,
     )
     setTasks(taskSelectedIsComplete)
+    completeTaskSound()
   }
 
   function handleRemoveTask(id) {
     const filteredTaks = tasks.filter((task) => task.id !== id)
     setTasks(filteredTaks)
+    deleteTaskSound()
   }
 
   const handleClickScroll = () => {
     listRef.current.scrollIntoView()
+  }
 
-    console.log('clicado')
+  function triggerHaveNoTask() {
+    haveNoTask()
   }
 
   const isNewTaskEmpty = newTask.length === 0
@@ -89,6 +117,7 @@ function App() {
         handleIsComplete={handleIsComplete}
         isTasksEmpty={isTasksEmpty}
         taskFinished={taskFinished}
+        triggerHaveNoTask={triggerHaveNoTask}
       />
     </div>
   )

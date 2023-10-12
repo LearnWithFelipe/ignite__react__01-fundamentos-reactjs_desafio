@@ -22,7 +22,6 @@ function App() {
   const [tasks, setTasks] = useState([])
   const [newTask, setNewtask] = useState('')
   const listRef = useRef(null)
-  const [triggered, setTriggered] = useState(false)
 
   const [haveNoTask, { stop }] = useSound(fanfareUrl, {
     volume: 0.3,
